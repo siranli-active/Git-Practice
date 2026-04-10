@@ -3,3 +3,16 @@
 3. git push : 将你在这个项目下的所有改动推送到远程的repository
 4. git stash : 将你的修改暂时藏起来，发生在这样的场景：当你还在写项目的时候，远程项目更新了，如果你此时pull会报错，因为你还在写就有unstaged的文件，这样会和远程
 仓库中pull下来的冲突。解决这个问题就需要先用git stash先将你还没完成的改变藏起来，然后再从远程仓库pull，最后用git stash apply将你的修改合并到刚刚pull下来的文件中
+
+branching & merging
+1. git branch <branch_name> 从main当前指向的commit中创建一个新的分支，并将其取名为<branch_name>
+2. git branch 列出你的repository中所有的branches
+3. git checkout <branch_name> 从当前branch切换到<branch_name>指定的branch
+    git中分工作区，暂存区以及仓库区；工作区包含unstaged的修改，暂存区包含通过add后staged的修改，而仓库区则是commit之后的修改
+    工作区和暂存区都是不分branch，即不管什么branch，修改都是可以看到的；
+    但是仓库区是强branch关联的，即修改一旦commit之后，就只有在对应的branch才能看到
+4. git reset --hard HEAD~1 删除当前分支最近的一次commit (彻底删除它，从工作区中删除，彻底没有了)
+    git reset --soft HEAD~1 删除当前分支最近的一次commit，但是changes会暂存在暂存区 staged
+    git reset (--mixed) HEAD~1 删除当前分支最近的第一次commit，但是changes会保存在工作区 unstaged
+5. git merge <要合并到当前分支的分支> -m "merge 的信息" 需要先切换到main分支才将其他分支合并进来
+6. git branch -d <branch name> 删除掉已经被merge的分支
