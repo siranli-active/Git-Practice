@@ -49,5 +49,7 @@ Experience:
     that is under version control
 
     3. 当你想贡献给其他人的公共库时，标准的工作流是先fork其他人的公共库到你的Github的repository里面，
-       然后再通过git clone将这个库下载到本地，接着再在本地branch出来，在branch中修改，然后提交修改再push
-       接着到你的Github里的这个repository里面的pull requests标签中点击new pull request, 接着create pull request两次即可
+       然后再通过git clone将这个库下载到本地，接着再在本地branch出来，在branch中修改，然后提交修改再push (git push origin <branch_name>)
+       接着到你的Github里的这个repository里面的pull requests标签可以看到一个新的pull request请求，点击compare pull request
+       可以查看比较，没有什么问题的话(github会自己比较如果没有冲突会告诉你可以auto merge), 就可以create pull request了，接着
+       公共库的主人就可以看到你的pull request，然后他会接受或者拒绝你的pull requests
